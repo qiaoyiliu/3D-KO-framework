@@ -18,7 +18,4 @@ This repository contains interactive visualizations, R code, and supplementary m
 ## How to View the Interactive Plot
 Visit: https://qiaoyiliu.github.io/3D-KO-framework/targetpaper3D.html
 
-## Reproducing the Analysis
 
-### Prerequisites
-```r
