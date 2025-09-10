@@ -12,9 +12,6 @@ This repository contains interactive visualizations, R code, and supplementary m
 ### Code
 - `targetpapermapping.R` - R script used to analyze bio-KOS literature and to generate the interactive visualization
 
-### Additional Files
-- `README.md` - This file
-
 ## How to View the Interactive Plot
 Visit: https://qiaoyiliu.github.io/3D-KO-framework/targetpaper3D.html
 
