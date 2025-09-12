@@ -175,7 +175,6 @@ p2 <- plot_ly(
   hovertext = ~Cite, hoverinfo = "text",
   showlegend = FALSE
 ) %>%
-  # add labels
   add_trace(
     x = ~label_x, y = ~label_y, z = ~label_z,
     type = "scatter3d", mode = "text",
@@ -183,7 +182,6 @@ p2 <- plot_ly(
     textfont = list(size = 10, color = "black"),
     inherit = FALSE, showlegend = FALSE
   ) %>%
-   #add regression plane
   #add_trace(
   #  x = grid$X, y = grid$Y, z = grid$Z,
   #  type = "mesh3d",
