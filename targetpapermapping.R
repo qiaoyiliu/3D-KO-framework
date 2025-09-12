@@ -1,9 +1,8 @@
 #This code is for generating the scatterplot of target papers for the KO thematic review journal paper.
 
 #For 2D plot
-library(readxl)
 
-df <- read_excel("KO review target paper mapping.xlsx")
+df <- read.csv("KO review target paper mapping.csv")
 
 library(dplyr)
 
@@ -46,12 +45,11 @@ ggplot(df_jittered, aes(
 
 
 #For interactive 3D plot----------------------------------------------
-library(readxl)
 library(dplyr)
 library(plotly)
 library(scales)
 
-df <- read_excel("KO review target paper mapping.xlsx")
+df <- read.csv("KO review target paper mapping.csv")
 
 df_jittered <- df %>%
   group_by(Function, Degree_of_automation) %>%
@@ -100,12 +98,11 @@ p
 
 
 #For static 3D plot---------------------------------------------
-library(readxl)
 library(dplyr)
 library(plotly)
 library(scales)
 
-df <- read_excel("KO review target paper mapping.xlsx")
+df <- read.csv("KO review target paper mapping.csv")
 df <- df %>%
   mutate(
     Cite = gsub(",.*", "", Cite),       
