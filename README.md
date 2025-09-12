@@ -1,6 +1,6 @@
-# Interactive Supplementary Materials for the Three-Dimensional Knowledge Organization (3D-KO) Framework
+# The Three-Dimensional Knowledge Organization (3D-KO) Framework
 ## Overview
-This repository contains interactive visualizations, R code, and supplementary materials for the manuscript:
+This repository contains interactive visualizations, R code, and supplementary materials for the journal article:
 
 **"Knowledge Organization under Scientific Paradigms: The Role of KOS in AI-Augmented Biological Research"**
 
