@@ -68,10 +68,10 @@ p <- plot_ly(
   df_jittered,
   x = ~Function_jit,
   y = ~Degree_jit,
-  z = ~Reasoning_cap,            # <-- change this to another column if you prefer a different Z
+  z = ~Reasoning_cap,           
   type = "scatter3d",
   mode = "markers",
-  text = ~Cite,                  # shown on hover (paper ID / short cite)
+  text = ~Cite,                  
   hovertemplate = paste(
     "<b>%{text}</b><br>",
     "Functionality: %{x}<br>",
@@ -106,12 +106,10 @@ library(plotly)
 library(scales)
 
 df <- read_excel("KO review target paper mapping.xlsx")
-
-# --- Clean labels ---
 df <- df %>%
   mutate(
-    Cite = gsub(",.*", "", Cite),       # remove everything after first comma
-    Cite = gsub("\\s+\\d{4}$", "", Cite), # remove trailing space + 4-digit year
+    Cite = gsub(",.*", "", Cite),       
+    Cite = gsub("\\s+\\d{4}$", "", Cite), 
     Cite = ifelse(
       grepl("Gene Ontology Consortium", Cite),
       sub("^The\\s+", "", Cite) |> sub("\\s+et al\\.$", "", x = _),
@@ -119,13 +117,11 @@ df <- df %>%
     )
   )
 
-# --- knobs ---
 dup_radius   <- 0.22
 group_round  <- 1
 label_base_y <- 0.22
 label_step_y <- 0.12
 
-# --- spread exact xyz duplicates ---
 phi <- pi * (3 - sqrt(5))
 df_xyz <- df %>%
   group_by(Function, Degree_of_automation, Reasoning_cap) %>%
@@ -144,7 +140,6 @@ df_xyz <- df %>%
   ) %>%
   ungroup()
 
-# --- stagger labels for overlapping in fixed view ---
 df_lab <- df_xyz %>%
   mutate(
     gx = round(X, group_round),
@@ -159,17 +154,14 @@ df_lab <- df_xyz %>%
   ) %>%
   ungroup()
 
-# --- fit regression plane ---
 fit <- lm(Y ~ X + Z, data = df_lab)
 
-# make a grid of X,Z for predictions
 grid <- expand.grid(
   X = seq(min(df_lab$X), max(df_lab$X), length.out = 20),
   Z = seq(min(df_lab$Z), max(df_lab$Z), length.out = 20)
 )
 grid$Y <- predict(fit, newdata = grid)
 
-# --- plot with points, labels, and plane ---
 p2 <- plot_ly(
   df_lab,
   x = ~X, y = ~Y, z = ~Z,
