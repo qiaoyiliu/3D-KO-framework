@@ -17,7 +17,6 @@ This repository contains interactive visualizations, R code, and supplementary m
 
 ## How to View the Interactive Plot
 URL will available after peer review.
-<!-- This is a hidden comment that readers won't see on GitHub's rendered page -->
-Visit: https://qiaoyiliu.github.io/3D-KO-framework/targetpaper3D.html
+
 
 
