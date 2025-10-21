@@ -16,7 +16,7 @@ This repository contains interactive visualizations, R code, and supplementary m
 - `KO review target papers.csv` - Annotated target papers using the 3D-KO framework
 
 ## How to View the Interactive Plot
-URL will available after peer review.
+URL will be available after peer review.
 
 
 
